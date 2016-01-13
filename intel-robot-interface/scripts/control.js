@@ -18,6 +18,8 @@ for (var i = 0, max = query.length; i < max; i++)
   GET[decodeURIComponent(param[0])] = decodeURIComponent(param[1] || "");
 }
 var conn = meshblu.createConnection({
+  "server": "edison.local",
+  "port": 3040,
   "uuid": GET.uuid,
   "token": GET.token
 });
