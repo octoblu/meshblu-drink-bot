@@ -140,6 +140,10 @@ conn.on('ready', function(data){
         if(state == false){
           relay.open();
         }
+      }else if (payload.command == "testTurret"){
+        relay.open();
+      }else if (payload.command == "stopTurrent"){
+        relay.close();
       }
 
     });
