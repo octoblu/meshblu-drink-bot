@@ -62,3 +62,9 @@ var token = "899c117e8fe27be5f85837f192505ad7e815135a";
 
 - Goes on the Chest
 - Just marquees some text
+
+### Tablet 4: Order
+
+- A page with some options, there is only one real option available though
+- Select the option -> Confirm -> send payload: "dispense" to "uuid": "86d518e3-15cd-4eef-9cd0-2f4072bf08d7"
+- Send some command to the face tablet to do its thing. "Now dispensing" maybe a random joke too?
