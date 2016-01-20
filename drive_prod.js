@@ -10,6 +10,10 @@ var meshbluJSON = require('./meshblu.json');
 var uuid    = meshbluJSON.uuid;
 var token   = meshbluJSON.token;
 
+var CW = 60;
+var CCW = 40;
+var STOP = 51;
+
 var conn = meshblu.createConnection({
   "uuid": uuid,
   "token": token,
