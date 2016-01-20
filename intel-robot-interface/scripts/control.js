@@ -185,7 +185,8 @@ angular.module('MyApp').directive('joystick', function() {
               "devices": "86d518e3-15cd-4eef-9cd0-2f4072bf08d7",
               "payload": payload
             };
-            //console.log(message);
+
+            console.log(message);
             conn.message(message);
 
             break;
