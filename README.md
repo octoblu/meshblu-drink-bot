@@ -1,27 +1,20 @@
 # meshblu-drink-bot
 
+### Edison meshblu
 
-### Schedule
+edison.local:3040
 
-#### Friday 1/15
+### Drive code creds
 
+```
+{
+  "uuid": "86d518e3-15cd-4eef-9cd0-2f4072bf08d7",
+  "token": "294482576df024d55156c796c18a81ab1d010810",
+  "server": "edison.local",
+  "port": "3040"
+}
 
-#### Saturday 1/16
-
-- Wiring
-- Test dispense program
-- Test drive
-
-#### Sunday 1/17
-
-- Power distribution finalize
-- Prepare files for aesthetic
-
-#### Monday 1/18
-
-- Cut body pieces
-- Maybe weld?
-
+```
 
 ## To DO
 
@@ -30,21 +23,42 @@
 
 ### Aesthetic
 
-- Grab dxfs from mock-up
-- Cut side walls first
-- grab dxfs for wheel guards and cut
-- Vinyl cut logos following Intel logo requirements
-- Figure out top-side facets to match mock-up
+- tablet mounts
+- get industrial velcro for side panels
+- table top laser cut
 
 ### Turret
 
-
 - Sensors? (hall effect)
+
 
 ### Software
 
-- ~~Install Meshblu on Edison~~
-- Report reserved name of edison to contact for ISMC for conference networking
-- ~~Build drive interface (will be using angular-meshblu-example boilerplate)~~
-- Animated face for robot tablet
-- Combine drive code + meshblu + private meshblu config + turret interface
+### Tablet 1 : Face
+
+- Animated face (max headroom style?)
+- Says in synthesized voice "Hey we're dispensing ec cetera"
+- Sends base64 images to
+
+```
+var uuid = "5174db30-7ce5-4d28-86bb-e7413f156730";
+var token = "899c117e8fe27be5f85837f192505ad7e815135a";
+```
+
+### Tablet 2 : Drive Interface
+
+credentials:
+```
+var uuid = "5174db30-7ce5-4d28-86bb-e7413f156730";
+var token = "899c117e8fe27be5f85837f192505ad7e815135a";
+```
+
+- Located in intel-robot-interface/control.html
+- It has a touch joystick that talks to the robot
+- It displays base64 images in the center
+- Has buttons for manually running dispense/reload
+
+### Tablet 3 : Chest Marquee
+
+- Goes on the Chest
+- Just marquees some text

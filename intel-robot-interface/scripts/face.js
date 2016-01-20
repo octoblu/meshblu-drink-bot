@@ -130,24 +130,15 @@ angular.module('webcamDemo', ['webcam', 'ngMaterial'] )
   };
 
 
-  var GET = {};
-  var query = window.location.search.substring(1).split("&");
-  for (var i = 0, max = query.length; i < max; i++)
-  {
-    if (query[i] === "") // check for trailing & with no param
-    continue;
-    var param = query[i].split("=");
-    GET[decodeURIComponent(param[0])] = decodeURIComponent(param[1] || "");
-  }
-  if(GET.uuid){
-    $scope.claim = true;
-    $scope.watchURL   = "http://camera.octoblu.com/watch.html?uuid=" + GET.uuid + "&token=" + GET.token;
-    var conn = meshblu.createConnection({
-      "server": "edison.local",
-      "port": 3040,
-      "uuid": GET.uuid,
-      "token": GET.token
-    });
+  var uuid = "5174db30-7ce5-4d28-86bb-e7413f156730";
+  var token = "899c117e8fe27be5f85837f192505ad7e815135a";
+
+  var conn = meshblu.createConnection({
+    "server": "edison.local",
+    "port": 3040,
+    "uuid": uuid,
+    "token": token
+  });
 
     conn.on('ready', function(data){
       console.log('UUID AUTHENTICATED!');
