@@ -20,11 +20,14 @@ for (var i = 0, max = query.length; i < max; i++)
 
 */
 
+var uuid = "5174db30-7ce5-4d28-86bb-e7413f156730";
+var token = "899c117e8fe27be5f85837f192505ad7e815135a";
+
 var conn = meshblu.createConnection({
   "server": "edison.local",
   "port": 3040,
-  "uuid": "5174db30-7ce5-4d28-86bb-e7413f156730",
-  "token": "899c117e8fe27be5f85837f192505ad7e815135a"
+  "uuid": uuid,
+  "token": token
 });
 
 var app = angular.module('MyApp', ['ngMaterial']);
@@ -32,12 +35,12 @@ var app = angular.module('MyApp', ['ngMaterial']);
 app.controller('AppCtrl', function($scope) {
 
 
-  $scope.webRTC  = "http://camera.octoblu.com/webrtc.html?uuid=" + GET.uuid + "&token=" + GET.token;
+  $scope.webRTC  = "http://camera.octoblu.com/webrtc.html?uuid=" + uuid + "&token=" + token;
   $scope.apply;
 
   conn.on('ready', function(data){
     console.log('UUID AUTHENTICATED!');
-    conn.subscribe({uuid: GET.uuid, types: ["sent"]});
+    conn.subscribe({uuid: uuid, types: ["sent"]});
 
     conn.on('message', function(data){
 

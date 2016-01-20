@@ -1,7 +1,7 @@
 {
   "uuid": "27b4001d-0d42-420c-959c-c0b5a6cceb02",
   "token": "18ea3fa2957530aa0984075316e0e8aff9266fc1",
-  "server": "edison.local",
+  "server": "localhost",
   "port": "3040",
   "type": "robot"
 }
