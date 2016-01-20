@@ -1,6 +1,8 @@
 var five = require("johnny-five");
 var keypress = require("keypress");
-var board = new five.Board();
+var board = new five.Board({
+  port: "/dev/ttyACM0"
+});
 
 keypress(process.stdin);
 
