@@ -12,7 +12,9 @@ var token   = meshbluJSON.token;
 
 var conn = meshblu.createConnection({
   "uuid": uuid,
-  "token": token
+  "token": token,
+  "server": meshbluJSON.server,
+  "port": meshbluJSON.port
 });
 
 conn.on('notReady', function(data){
