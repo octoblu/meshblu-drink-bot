@@ -48,6 +48,22 @@ app.controller('AppCtrl', function($scope) {
 
     });
 
+    $scope.testOn = function(){
+      var message = {
+        "devices": "86d518e3-15cd-4eef-9cd0-2f4072bf08d7",
+        "payload": "testTurret"
+      };
+      conn.message(message);
+    };
+
+    $scope.testOff = function(){
+      var message = {
+        "devices": "86d518e3-15cd-4eef-9cd0-2f4072bf08d7",
+        "payload": "stopTurrent"
+      };
+      conn.message(message);
+    };
+
   });
 
   $scope.pos = {
