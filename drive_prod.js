@@ -68,7 +68,7 @@ conn.on('ready', function(data){
 
     conn.on('message', function(data){
 
-      payload = data.payload;
+      payload.command = data.payload;
       //console.log(payload);
 
       if (payload.command === "up") {

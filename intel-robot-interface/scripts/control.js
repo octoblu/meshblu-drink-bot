@@ -182,7 +182,7 @@ angular.module('MyApp').directive('joystick', function() {
             }
 
             var message = {
-              "devices": "017d0ddd-4b97-485b-975f-a90678295015",
+              "devices": "86d518e3-15cd-4eef-9cd0-2f4072bf08d7",
               "payload": payload
             };
             //console.log(message);
@@ -196,7 +196,7 @@ angular.module('MyApp').directive('joystick', function() {
 
       function onTouchEnd() {
         var message = {
-          "devices": "017d0ddd-4b97-485b-975f-a90678295015",
+          "devices": "86d518e3-15cd-4eef-9cd0-2f4072bf08d7",
           "payload": "stop"
         };
         conn.message(message);
