@@ -20,6 +20,8 @@ for (var i = 0, max = query.length; i < max; i++)
 
 */
 
+var prev;
+
 var uuid = "5174db30-7ce5-4d28-86bb-e7413f156730";
 var token = "899c117e8fe27be5f85837f192505ad7e815135a";
 
@@ -163,6 +165,7 @@ angular.module('MyApp').directive('joystick', function() {
 
             var payload;
 
+
             if(scope.position.x > -100 && scope.position.y > 0){
               payload = "up";
             }else if(scope.position.x == 100 && scope.position.y == 100){
@@ -181,13 +184,17 @@ angular.module('MyApp').directive('joystick', function() {
               payload = "right";
             }
 
+            prev = payload;
+
             var message = {
               "devices": "86d518e3-15cd-4eef-9cd0-2f4072bf08d7",
               "payload": payload
             };
 
             console.log(message);
-            conn.message(message);
+            if(prev != payload){
+              conn.message(message);
+            }
 
             break;
           }
