@@ -37,7 +37,11 @@ conn.on('ready', function(data){
 
   conn.update({
     "uuid": uuid,
-    "messageSchema": MESSAGE_SCHEMA
+    "messageSchema": MESSAGE_SCHEMA,
+    "receiveWhitelist": ["*"],
+    "discoverWhitelist": ["*"],
+    "configureWhitelist": ["*"],
+    "sendWhitelist": ["*"]
   });
 
   board.on("ready", function() {
