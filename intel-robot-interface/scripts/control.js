@@ -6,7 +6,7 @@ window.requestAnimFrame = (function(){
     window.setTimeout(callback, 1000 / 60);
   };
 })();
-
+/*
 var GET = {};
 var query = window.location.search.substring(1).split("&");
 for (var i = 0, max = query.length; i < max; i++)
@@ -17,11 +17,14 @@ for (var i = 0, max = query.length; i < max; i++)
   var param = query[i].split("=");
   GET[decodeURIComponent(param[0])] = decodeURIComponent(param[1] || "");
 }
+
+*/
+
 var conn = meshblu.createConnection({
   "server": "edison.local",
   "port": 3040,
-  "uuid": GET.uuid,
-  "token": GET.token
+  "uuid": "5174db30-7ce5-4d28-86bb-e7413f156730",
+  "token": "899c117e8fe27be5f85837f192505ad7e815135a"
 });
 
 var app = angular.module('MyApp', ['ngMaterial']);
@@ -155,13 +158,31 @@ angular.module('MyApp').directive('joystick', function() {
               }
             );
 
+            var payload;
+
+            if(scope.position.x > -100 && scope.position.y > 0){
+              payload = "up";
+            }else if(scope.position.x == 100 && scope.position.y == 100){
+              payload = "cw";
+            }else if(scope.position.x == -100 && scope.position.y == 100){
+              payload = "ccw";
+            }else if(scope.position.x == -100 && scope.position.y == -100){
+              payload = "";
+            }else if(scope.position.x == 100 && scope.position.y == -100){
+              payload = "";
+            }else if(scope.position.x > -100 && scope.position.y <= -100){
+              payload = "down";
+            }else if(scope.position.x >= -100 && scope.position.y > -100){
+              payload = "left";
+            }else if(scope.position.x < 100 && scope.position.y > -100){
+              payload = "right";
+            }
+
             var message = {
-              "devices": "*",
-              "payload": {
-                "position":  scope.position
-              }
+              "devices": "27b4001d-0d42-420c-959c-c0b5a6cceb02",
+              "payload": payload
             };
-            console.log(message);
+            //console.log(message);
             conn.message(message);
 
             break;
@@ -171,7 +192,11 @@ angular.module('MyApp').directive('joystick', function() {
       }
 
       function onTouchEnd() {
-
+        var message = {
+          "devices": "27b4001d-0d42-420c-959c-c0b5a6cceb02",
+          "payload": "stop"
+        };
+        conn.message(message);
         cursorTouchId = -1;
 
         scope.$apply(
