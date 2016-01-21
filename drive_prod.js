@@ -148,7 +148,7 @@ conn.on('ready', function(data){
       }else if (payload.command == "out"){
         servo.to(50);
       }else if (payload.command == "in"){
-        relay.to(100);
+        servo.to(100);
       }
 
     });
