@@ -52,7 +52,7 @@ conn.on('ready', function(data){
   board.on("ready", function() {
 
     var relay = new five.Relay({
-                    pin: 13,
+                    pin: 12,
                     type: "NC"
                   });
 
@@ -68,8 +68,8 @@ conn.on('ready', function(data){
       }
     });
 
-    servo.to(50);
-    setTimeout(function(){ servo.to(100);}, 3000);
+    servo.to(100);
+
 
 
     var leftf = new five.ESC({
@@ -145,6 +145,10 @@ conn.on('ready', function(data){
         relay.open();
       }else if (payload.command == "stopTurrent"){
         relay.close();
+      }else if (payload.command == "out"){
+        servo.to(50);
+      }else if (payload.command == "in"){
+        relay.to(100);
       }
 
     });

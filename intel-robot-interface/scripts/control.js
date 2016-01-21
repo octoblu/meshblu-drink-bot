@@ -65,6 +65,22 @@ app.controller('AppCtrl', function($scope) {
       conn.message(message);
     };
 
+    $scope.out = function(){
+      var message = {
+        "devices": "69e93636-9bcd-43a1-a919-2fc41ecdc5a4",
+        "payload": "out"
+      };
+      conn.message(message);
+    };
+
+    $scope.in = function(){
+      var message = {
+        "devices": "69e93636-9bcd-43a1-a919-2fc41ecdc5a4",
+        "payload": "in"
+      };
+      conn.message(message);
+    };
+
   });
 
   $scope.pos = {
