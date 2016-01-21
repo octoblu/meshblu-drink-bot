@@ -1,11 +1,10 @@
 [Unit]
-Description=Meshblu
+Description=Robot
 After=meshblu.service
 Requires=meshblu.service
 
 [Service]
 #User=root
-TimeoutStartSec=20
 ExecStart=/usr/bin/forever start /home/root/meshblu-drink-bot/drive_prod.js
 
 [Install]

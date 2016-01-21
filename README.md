@@ -8,11 +8,12 @@ edison.local:3040
 
 ```
 {
-  "uuid": "86d518e3-15cd-4eef-9cd0-2f4072bf08d7",
-  "token": "294482576df024d55156c796c18a81ab1d010810",
+  "uuid": "69e93636-9bcd-43a1-a919-2fc41ecdc5a4",
+  "token": "de916f5f67c641fff155845a641a08d09177f2aa",
   "server": "edison.local",
   "port": "3040"
 }
+
 
 ```
 
@@ -49,8 +50,13 @@ var token = "899c117e8fe27be5f85837f192505ad7e815135a";
 
 credentials:
 ```
-var uuid = "5174db30-7ce5-4d28-86bb-e7413f156730";
-var token = "899c117e8fe27be5f85837f192505ad7e815135a";
+{
+  "uuid": "2163503e-91ac-48bc-b57f-0b2e8be6b7ce",
+  "token": "85e2b4f4a37aa1b6f5f6af01c1d804c2ea4a41e7",
+  "server": "edison.local",
+  "port": "3040"
+}
+
 ```
 
 - Located in intel-robot-interface/control.html

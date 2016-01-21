@@ -57,6 +57,14 @@ app.controller('AppCtrl', function($scope) {
       conn.message(message);
     };
 
+    $scope.dispense = function(){
+      var message = {
+        "devices": "69e93636-9bcd-43a1-a919-2fc41ecdc5a4",
+        "payload": "dispense"
+      };
+      conn.message(message);
+    };
+
     $scope.testOff = function(){
       var message = {
         "devices": "69e93636-9bcd-43a1-a919-2fc41ecdc5a4",
