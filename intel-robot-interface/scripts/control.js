@@ -186,7 +186,7 @@ angular.module('MyApp').directive('joystick', function() {
             var payload;
 
 
-            if(scope.position.x > -100 && scope.position.y > 0){
+            if(scope.position.x > -50 && scope.position.y > 0 && scope.position.x < 60){
               payload = "up";
             }else if(scope.position.x == 100 && scope.position.y == 100){
               payload = "cw";
@@ -198,23 +198,25 @@ angular.module('MyApp').directive('joystick', function() {
               payload = "";
             }else if(scope.position.x > -100 && scope.position.y <= -100){
               payload = "down";
-            }else if(scope.position.x >= -100 && scope.position.y > -100){
+            }else if(scope.position.x >= -100 && scope.position.y > -100 && scope.position.x < 0){
               payload = "left";
-            }else if(scope.position.x < 100 && scope.position.y > -100){
+            }else if(scope.position.x < 100 && scope.position.y > -100 && scope.position.x > 0){
               payload = "right";
             }
 
-            prev = payload;
+
 
             var message = {
               "devices": "69e93636-9bcd-43a1-a919-2fc41ecdc5a4",
               "payload": payload
             };
 
-            console.log(message);
+
             if(prev != payload){
               conn.message(message);
+              console.log(message);
             }
+            prev = payload;
 
             break;
           }
@@ -227,6 +229,8 @@ angular.module('MyApp').directive('joystick', function() {
           "devices": "69e93636-9bcd-43a1-a919-2fc41ecdc5a4",
           "payload": "stop"
         };
+
+        prev = "stop";
         conn.message(message);
         cursorTouchId = -1;
 

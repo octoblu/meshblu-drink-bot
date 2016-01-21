@@ -156,7 +156,7 @@ conn.on('ready', function(data){
     var dispense = function(){
       state = true;
       servo.to(10);
-      setTimeout(function(){ servo.to(80); state = false;}, 3000);
+      setTimeout(function(){ servo.to(100); state = false;}, 3000);
     };
 
     var sensor = new five.Sensor.Digital(2);
