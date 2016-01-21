@@ -63,7 +63,7 @@ conn.on('ready', function(data){
       range: [0,180],    // Default: 0-180
       fps: 100,          // Used to calculate rate of movement between positions
       invert: false,     // Invert all specified positions
-      startAt: 10,       // Immediately move to a degree
+      startAt: 90,       // Immediately move to a degree
       center: true,      // overrides startAt if true and moves the servo to the center of the range
       specs: {           // Is it running at 5V or 3.3V?
         speed: five.Servo.Continuous.speeds["@5.0V"]
