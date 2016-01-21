@@ -68,8 +68,8 @@ conn.on('ready', function(data){
       }
     });
 
-    servo.to(10);
-    setTimeout(function(){ servo.to(80);}, 3000);
+    servo.to(50);
+    setTimeout(function(){ servo.to(100);}, 3000);
 
 
     var leftf = new five.ESC({
