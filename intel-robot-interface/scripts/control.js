@@ -9,8 +9,9 @@ window.requestAnimFrame = (function(){
 
 var prev;
 
-var uuid = "5174db30-7ce5-4d28-86bb-e7413f156730";
-var token = "899c117e8fe27be5f85837f192505ad7e815135a";
+
+var uuid = "2163503e-91ac-48bc-b57f-0b2e8be6b7ce";
+var token = "85e2b4f4a37aa1b6f5f6af01c1d804c2ea4a41e7";
 
 var conn = meshblu.createConnection({
   "server": "edison.local",
@@ -50,7 +51,7 @@ app.controller('AppCtrl', function($scope) {
 
     $scope.testOn = function(){
       var message = {
-        "devices": "86d518e3-15cd-4eef-9cd0-2f4072bf08d7",
+        "devices": "69e93636-9bcd-43a1-a919-2fc41ecdc5a4",
         "payload": "testTurret"
       };
       conn.message(message);
@@ -58,7 +59,7 @@ app.controller('AppCtrl', function($scope) {
 
     $scope.testOff = function(){
       var message = {
-        "devices": "86d518e3-15cd-4eef-9cd0-2f4072bf08d7",
+        "devices": "69e93636-9bcd-43a1-a919-2fc41ecdc5a4",
         "payload": "stopTurrent"
       };
       conn.message(message);
@@ -190,7 +191,7 @@ angular.module('MyApp').directive('joystick', function() {
             prev = payload;
 
             var message = {
-              "devices": "86d518e3-15cd-4eef-9cd0-2f4072bf08d7",
+              "devices": "69e93636-9bcd-43a1-a919-2fc41ecdc5a4",
               "payload": payload
             };
 
@@ -207,7 +208,7 @@ angular.module('MyApp').directive('joystick', function() {
 
       function onTouchEnd() {
         var message = {
-          "devices": "86d518e3-15cd-4eef-9cd0-2f4072bf08d7",
+          "devices": "69e93636-9bcd-43a1-a919-2fc41ecdc5a4",
           "payload": "stop"
         };
         conn.message(message);

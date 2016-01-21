@@ -5,7 +5,7 @@ var board = new five.Board({
 });
 
 var meshblu = require('meshblu');
-var meshbluJSON = require('./meshblu.json');
+var meshbluJSON = require('./meshblu2.json');
 
 var uuid    = meshbluJSON.uuid;
 var token   = meshbluJSON.token;
