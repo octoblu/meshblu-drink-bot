@@ -163,7 +163,7 @@ conn.on('ready', function(data){
 
     sensor.on("change", function() {
       console.log(this.value);
-      if(this.value == 1 && state == false){
+      if(this.value == 0 && state == false){
         relay.close();
         dispense();
       }
