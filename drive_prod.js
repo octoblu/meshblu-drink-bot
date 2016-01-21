@@ -51,27 +51,6 @@ conn.on('ready', function(data){
 
   board.on("ready", function() {
 
-    var relay = new five.Relay({
-                    pin: 12,
-                    type: "NC"
-                  });
-
-    var servo = new five.Servo({
-      id: "MyServo",     // User defined id
-      pin: 10,           // Which pin is it attached to?
-      type: "standard",  // Default: "standard". Use "continuous" for continuous rotation servos
-      range: [0,180],    // Default: 0-180
-      fps: 100,          // Used to calculate rate of movement between positions
-      invert: false,     // Invert all specified positions
-      specs: {           // Is it running at 5V or 3.3V?
-        speed: five.Servo.Continuous.speeds["@5.0V"]
-      }
-    });
-
-    servo.to(100);
-
-
-
     var leftf = new five.ESC({
       device: "FORWARD_REVERSE",
       neutral: 50,
@@ -95,6 +74,27 @@ conn.on('ready', function(data){
       neutral: 50,
       pin: 9
     });
+
+
+    var relay = new five.Relay({
+                    pin: 12,
+                    type: "NC"
+                  });
+
+    var servo = new five.Servo({
+      id: "MyServo",     // User defined id
+      pin: 10,           // Which pin is it attached to?
+      type: "standard",  // Default: "standard". Use "continuous" for continuous rotation servos
+      range: [0,180],    // Default: 0-180
+      fps: 100,          // Used to calculate rate of movement between positions
+      invert: false,     // Invert all specified positions
+      specs: {           // Is it running at 5V or 3.3V?
+        speed: five.Servo.Continuous.speeds["@5.0V"]
+      }
+    });
+
+    servo.to(100);
+
 
     conn.on('message', function(data){
 
