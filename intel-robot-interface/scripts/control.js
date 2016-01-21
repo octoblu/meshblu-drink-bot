@@ -195,21 +195,21 @@ angular.module('MyApp').directive('joystick', function() {
 
 
             if(scope.position.x > -50 && scope.position.y > 0 && scope.position.x < 60){
-              payload = "up";
+              payload = "down";
             }else if(scope.position.x == 100 && scope.position.y == 100){
               payload = "cw";
             }else if(scope.position.x == -100 && scope.position.y == 100){
               payload = "ccw";
             }else if(scope.position.x == -100 && scope.position.y == -100){
-              payload = "";
+              payload = "ld";
             }else if(scope.position.x == 100 && scope.position.y == -100){
-              payload = "";
-            }else if(scope.position.x > -100 && scope.position.y <= -100){
-              payload = "down";
+              payload = "rd";
+            }else if(scope.position.x > -50 && scope.position.x < 60 && scope.position.y <= -100){
+              payload = "up";
             }else if(scope.position.x >= -100 && scope.position.y > -100 && scope.position.x < 0){
-              payload = "left";
-            }else if(scope.position.x < 100 && scope.position.y > -100 && scope.position.x > 0){
               payload = "right";
+            }else if(scope.position.x < 100 && scope.position.y > -100 && scope.position.x > 0){
+              payload = "left";
             }
 
 

@@ -137,6 +137,26 @@ conn.on('ready', function(data){
         leftb.speed(CW);
         rightf.speed(CCW);
         rightb.speed(CCW);
+      }else if (payload.command === "lu") {
+        leftf.speed(CCW);
+        rightb.speed(CW);
+        leftb.speed(STOP);
+        rightf.speed(STOP);
+      }else if (payload.command === "ru") {
+        leftb.speed(CW);
+        rightf.speed(CW);
+        leftf.speed(STOP);
+        rightb.speed(STOP);
+      }else if (payload.command === "ld") {
+        leftf.speed(CW);
+        rightb.speed(CCW);
+        leftb.speed(STOP);
+        rightf.speed(STOP);
+      }else if (payload.command === "rd") {
+        leftb.speed(CCW);
+        rightf.speed(CCW);
+        leftf.speed(STOP);
+        rightb.speed(STOP);
       }else if (payload.command === "dispense") {
         if(state == false){
           relay.open();
