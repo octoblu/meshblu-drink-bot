@@ -152,7 +152,7 @@ conn.on('ready', function(data){
        leftf.speed(CW);
         rightb.speed(CCW);
         leftb.speed(STOP);
-        rightf.speed(STOP); */
+        rightf.speed(STOP); 
       }else if (payload.command === "rd") {
         leftb.speed(CCW);
         rightf.speed(CCW);
