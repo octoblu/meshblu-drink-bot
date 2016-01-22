@@ -1,10 +1,10 @@
 [Unit]
 Description=Robot
-After=meshblu.service
+After=xdk-daemon.service
 
 [Service]
 #User=root
-ExecStart=/usr/bin/forever start /home/root/meshblu-drink-bot/drive_prod.js
+ExecStart=/usr/bin/http-server /home/root/drive-interface
 
 [Install]
 WantedBy=multi-user.target
