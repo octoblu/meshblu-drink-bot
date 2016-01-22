@@ -1,0 +1,18 @@
+{
+  "apps" : [{
+    "name"        : "meshblu",
+    "script"      : "server.js",
+    "watch"       : true,
+    "cwd"         : "/home/root/meshblu",
+    "env": {
+        "UUID": "XX",
+        "TOKEN": "XX",
+        "PORT": "3040"
+    }
+  },{
+    "name"        : "drive",
+    "script"      : "drive_prod.js",
+    "watch"       : true,
+    "cwd"         : "/home/root/meshblu-drink-bot"
+  }]
+}
