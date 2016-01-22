@@ -1,8 +1,4 @@
 var five = require("johnny-five");
-var keypress = require("keypress");
-var board = new five.Board({
-  port: "/dev/ttyACM0"
-});
 
 var meshblu = require('meshblu');
 var meshbluJSON = require('./meshblu2.json');
@@ -30,6 +26,10 @@ conn.on('notReady', function(data){
 
 conn.on('ready', function(data){
   console.log('UUID AUTHENTICATED!');
+
+  var board = new five.Board({
+    port: "/dev/ttyACM0"
+  });
 
   var MESSAGE_SCHEMA = {
     "type": 'object',
