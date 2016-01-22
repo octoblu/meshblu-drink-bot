@@ -4,6 +4,7 @@ After=xdk-daemon.service
 
 [Service]
 #User=root
+ExecStart=cp /home/root/meshblu/bak.bak /home/root/meshblu/devices.db
 ExecStart=/usr/bin/http-server /home/root/drive-interface
 
 [Install]
