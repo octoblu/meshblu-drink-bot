@@ -1,7 +1,6 @@
 [Unit]
 Description=Robot
 After=meshblu.service
-Requires=meshblu.service
 
 [Service]
 #User=root

@@ -14,6 +14,7 @@ var CW = 60;
 var CCW = 40;
 var STOP = 51;
 var state = false;
+var load = false;
 
 var conn = meshblu.createConnection({
   "uuid": uuid,
@@ -169,6 +170,10 @@ conn.on('ready', function(data){
         servo.to(50);
       }else if (payload.command == "in"){
         servo.to(100);
+      }else if (payload.command === "load") {
+        if(state == false){
+          relay.open();
+        }
       }
 
     });
@@ -185,7 +190,9 @@ conn.on('ready', function(data){
       console.log(this.value);
       if(this.value == 0 && state == false){
         relay.close();
-        dispense();
+        if(load == false){
+          dispense();
+        }    
       }
     });
 

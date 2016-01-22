@@ -12,7 +12,6 @@
   <meta name="viewport" content="width=device-width">
 
   <link rel='stylesheet' href='styles/material.css'>
-  <script src="https://simplewebrtc.com/latest-v2.js"></script>
   <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-animate.min.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.min.js'></script>
@@ -48,19 +47,13 @@
           </div>
         </webcam>
       </div>
-
-      <md-button ng-hide="{{showSnap}}" class="md-raised md-primary" ng-click="makeSnapshot()">Take Snapshot</md-button>
-
-      <div>
-        <canvas id="snapshot" ng-hide="showPreview" ></canvas>
+        <div>
+        <canvas id="snapshot" ng-hide="true" ></canvas>
       </div>
-
     </md-card>
   </section>
 
 </md-content>
-
-<video id="localVideo" hidden="true"></video>
 
 </body>
 </html>
