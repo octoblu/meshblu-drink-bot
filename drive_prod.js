@@ -181,7 +181,7 @@ conn.on('ready', function(data){
 
     var dispense = function(){
       state = true;
-      servo.to(30);
+      servo.to(50);
       setTimeout(function(){ servo.to(100); state = false;}, 10000);
     };
 
