@@ -2,6 +2,7 @@
   "apps" : [{
     "name"        : "meshblu",
     "script"      : "server.js",
+    "watch"       : false,
     "cwd"         : "/home/root/meshblu",
     "env": {
         "UUID": "XX",
@@ -11,6 +12,7 @@
   },{
     "name"        : "drive",
     "script"      : "drive_prod.js",
+    "watch"       : false,
     "cwd"         : "/home/root/meshblu-drink-bot"
   }]
 }
