@@ -171,6 +171,7 @@ conn.on('ready', function(data){
       }else if (payload.command == "in"){
         servo.to(100);
       }else if (payload.command === "load") {
+        load = true;
         if(state == false){
           relay.open();
         }
@@ -192,7 +193,9 @@ conn.on('ready', function(data){
         relay.close();
         if(load == false){
           dispense();
-        }    
+        }else{
+          load = false;
+        }
       }
     });
 
