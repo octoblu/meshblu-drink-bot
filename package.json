@@ -1,6 +1,6 @@
 {
   "name": "meshblu-drink-bot",
-  "version": "1.0.37",
+  "version": "1.0.38",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,10 +9,7 @@
   "author": "virgilvox <moheeb.zara@citrix.com> (http://app.octoblu.com/)",
   "license": "ISC",
   "dependencies": {
-    "ble-serial": "^0.4.1",
-    "firmata": "^0.8.0",
     "johnny-five": "^0.9.17",
-    "keypress": "^0.2.1",
     "meshblu": "^1.32.0"
   }
 }
