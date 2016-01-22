@@ -17,6 +17,30 @@ edison.local:3040
 
 ```
 
+### Face credentials
+```
+{
+  "uuid": "5285ddf7-5250-4f92-ae0a-b783e4fda87b",
+  "token": "1e7387b9bcb14b9606d4fe6e077d7f886323b9c6",
+  "server": "edison.local",
+  "port": "3040"
+}
+```
+
+### Order credentials
+```
+{
+  "uuid": "cb75551b-aa8b-45f5-839d-e7b1dd7fb422",
+  "token": "30412d776fc229cf01e8827d13328cf0c3fdc8a0",
+  "server": "edison.local",
+  "port": "3040"
+}
+```
+
+## dispensing
+
+Send payload: "dispense" to UUID = "69e93636-9bcd-43a1-a919-2fc41ecdc5a4"
+
 ## To DO
 
 
