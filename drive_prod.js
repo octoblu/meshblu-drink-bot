@@ -11,6 +11,7 @@ var CCW = 40;
 var STOP = 51;
 var state = false;
 var load = false;
+var lastCommand;
 
 var conn = meshblu.createConnection({
   "uuid": uuid,
@@ -100,6 +101,7 @@ conn.on('ready', function(data){
     conn.on('message', function(data){
 
       var payload = {"command": data.payload};
+      lastCommand = payload;
       //console.log(payload);
 
       if (payload.command === "up") {
@@ -184,6 +186,15 @@ conn.on('ready', function(data){
       servo.to(50);
       setTimeout(function(){ servo.to(100); state = false;}, 10000);
     };
+
+    setInterval(function(){
+      if(lastCommand != "stop"){
+        leftf.speed(STOP);
+        leftb.speed(STOP);
+        rightf.speed(STOP);
+        rightb.speed(STOP);
+      }
+    }, 6000);
 
     var sensor = new five.Sensor.Digital(2);
 
