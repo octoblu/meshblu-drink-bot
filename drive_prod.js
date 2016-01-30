@@ -154,7 +154,7 @@ conn.on('ready', function(data){
        leftf.speed(CW);
         rightb.speed(CCW);
         leftb.speed(STOP);
-        rightf.speed(STOP); */
+        rightf.speed(STOP);
       }else if (payload.command === "rd") {
         leftb.speed(CCW);
         rightf.speed(CCW);
@@ -184,7 +184,7 @@ conn.on('ready', function(data){
     var dispense = function(){
       state = true;
       servo.to(50);
-      setTimeout(function(){ servo.to(100); state = false;}, 10000);
+      setTimeout(function(){ servo.to(110); state = false;}, 10000);
     };
 
     setInterval(function(){
